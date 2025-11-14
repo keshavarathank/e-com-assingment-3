@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.search-bar {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+  border: none;
+  background: #0d6efd;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.header-icons {
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+.icon {
+  position: relative;
+  font-size: 22px;
+  text-decoration: none;
+  color: #333;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #0d6efd;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+main section {
+  display: none;
+  padding: 40px 20px;
+}
+
+main section.active {
+  display: block;
+}
+
+/* Banner */
+.banner {
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713') center/cover no-repeat;
+  padding: 100px 20px;
+  border-radius: 10px;
+  color: white;
+  background-blend-mode: multiply;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.banner h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.banner button {
+  background: #0d6efd;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Product Grid */
+.section-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* About */
+.about-text {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+/* LOGIN & REGISTER FORMS */
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background: #0d6efd;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.login-form button:hover {
+  background: #0b5ed7;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.forgot {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 10px;
+}
+.signup-text a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+
+.about-img {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* HEADER, NAVBAR, BANNER, PRODUCTS – keep your earlier styles */
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer h3, .footer h4 {
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 5px 0;
+}
+
+.footer-link {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #ffdd57;
+}
+
+.socials a {
+  font-size: 22px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+}

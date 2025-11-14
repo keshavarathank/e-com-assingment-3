@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> AuraMart - E-Commerce Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll(".nav-link, .footer-link, .header-icon-link");
+      const sections = document.querySelectorAll("main section");
+
+      function switchView(targetId) {
+        sections.forEach(sec => sec.classList.remove("active"));
+        const target = document.getElementById(targetId);
+        if (target) target.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const target = link.getAttribute("href").substring(1);
+          switchView(target);
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo"> AuraMart</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products..." />
+      <button>🔍</button>
+    </div>
+
+    <div class="header-icons">
+      <a href="#wishlist" class="icon header-icon-link" title="Wishlist">💖</a>
+      <a href="#cart" class="icon header-icon-link" title="Cart">🛒<span class="badge">2</span></a>
+      <a href="#login" class="icon header-icon-link" title="Login / Account">👤</a>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#products" class="nav-link">Products</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HOME -->
+    <section id="home" class="active">
+      <div class="banner">
+        <h1>Welcome to  AuraMart</h1>
+        <p>Your one-stop shop for electronics, fashion, and more.</p>
+        <button onclick="document.querySelector('[href=\'#products\']').click()">Shop Now</button>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61Cpww1Dn-L._AC_UF894,1000_QL80_.jpg" alt="Product">
+          <h3>Wireless Headphones</h3>
+          <p>₹1599</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Unbeatable-_480CH_-banner5.jpg?v=1665216247" alt="Product">
+          <h3>Smart Watch</h3>
+          <p>₹5265</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/41o5Ypw49vL._SR290,290_.jpg" alt="Product">
+          <h3>Bluetooth Speaker</h3>
+          <p>₹1599</p>
+          <button>Add to Cart</button>
+        </div>
+
+      </div>
+<div class="product-grid">
+        <div class="product-card">
+          <img src="https://sm.pcmag.com/pcmag_au/photo/m/msi-titan-/msi-titan-18-hx_r2s9.jpg" alt="Product">
+          <h3>Gaming Laptop</h3>
+          <p>₹1,69,999</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://images-cdn.ubuy.co.in/64c44c12c0ff597fab77f0a1-oculus-quest-64gb-vr-headset.jpg" alt="Product">
+          <h3>VR (Gaming Edition)</h3>
+          <p>₹1,54,999</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://www.deccanchronicle.com/h-upload/2025/01/10/1880313-17.webp" alt="Product">
+          <h3>Iphone</h3>
+          <p>₹2,69,999</p>
+          <button>Add to Cart</button>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <p class="about-text">
+         AuraMart is a modern e-commerce platform offering top-quality products with a seamless shopping experience.
+        Our mission is to connect customers with trusted brands worldwide.
+      </p>
+      <img src="https://www.thestatesman.com/wp-content/uploads/2019/03/e-comm.jpg" alt="About Image" class="about-img">
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form">
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Message</label>
+        <textarea required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- LOGIN PAGE -->
+    <section id="login">
+      <h2 class="section-title">Login to Your Account</h2>
+      <form class="login-form">
+        <label>Email or Mobile Number</label>
+        <input type="text" placeholder="Enter your email or phone" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required>
+
+        <div class="login-options">
+          <label><input type="checkbox"> Remember Me</label>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p class="signup-text">Don’t have an account? <a href="#register" class="footer-link">Register Now</a></p>
+      </form>
+    </section>
+
+    <!-- REGISTER PAGE -->
+    <section id="register">
+      <h2 class="section-title">Create an Account</h2>
+      <form class="login-form">
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Mobile Number</label>
+        <input type="text" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" required>
+
+        <button type="submit">Register</button>
+
+        <p class="signup-text">Already have an account? <a href="#login" class="footer-link">Login</a></p>
+      </form>
+    </section>
+
+    <!-- CART -->
+    <section id="cart">
+      <h2 class="section-title">Your Shopping Cart</h2>
+      <p style="text-align:center;">You have 2 items in your cart. (Feature demo only)</p>
+    </section>
+
+    <!-- WISHLIST -->
+    <section id="wishlist">
+      <h2 class="section-title">My Wishlist</h2>
+      <p style="text-align:center;">Your wishlist is currently empty.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3> AuraMart</h3>
+        <p>Shop smarter. Live better.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#products" class="footer-link">Products</a></li>
+          <li><a href="#about" class="footer-link">About</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="#cart" class="footer-link">Your Cart</a></li>
+          <li><a href="#wishlist" class="footer-link">Wishlist</a></li>
+          <li><a href="#login" class="footer-link">Login</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank">🌐</a>
+          <a href="https://twitter.com" target="_blank">🐦</a>
+          <a href="https://instagram.com" target="_blank">📸</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-note">© 2025  AuraMart. All rights reserved.</p>
+  </footer>
+</body>
+</html>
